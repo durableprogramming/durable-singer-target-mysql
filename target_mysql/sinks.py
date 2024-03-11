@@ -23,6 +23,8 @@ class MySQLSink(SQLSink):
     """MySQL target sink class."""
 
     connector_class = MySQLConnector
+    MAX_SIZE_DEFAULT = 100000
+
 
     def __init__(self, target: Target, *args: tuple, **kwargs: dict) -> None:
         """Initialize SQL Sink. See super class for more details."""
