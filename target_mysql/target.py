@@ -165,7 +165,7 @@ class TargetMySQL(Target):
             Max number of sinks that can be drained in parallel.
         """
         # https://github.com/MeltanoLabs/target-postgres/issues/3
-        return 1
+        return 8
 
     def _process_record_message(self, message_dict: dict) -> None:
         """Process a RECORD message.

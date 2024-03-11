@@ -177,7 +177,7 @@ class MySQLSink(SQLSink):
                         continue
                     insert_record[column.name] = record.get(column.name)
                 data_to_insert.append(insert_record)
-        self.connector.connection.execute(insert, data_to_insert)
+        self.connector.connection.execute(insert.prefix_with('IGNORE'), data_to_insert)
         return True
 
     def sanitize_entry(self, to_sanitize: Any) -> dict | list | str:  # noqa: ANN401
