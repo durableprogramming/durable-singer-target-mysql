@@ -344,7 +344,7 @@ class MySQLConnector(SQLConnector):
         column = sqlalchemy.Column(column_name, column_type)
 
         return sqlalchemy.DDL(
-            "ALTER TABLE `%(table_name)` ADD COLUMN `%(column_name)s` %(column_type)s",
+            "ALTER TABLE `%(table_name)s` ADD COLUMN `%(column_name)s` %(column_type)s",
             {
                 "table_name": table_name,
                 "column_name": column.compile(dialect=self._engine.dialect),
